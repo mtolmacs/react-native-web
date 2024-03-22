@@ -23,6 +23,7 @@ import StyleSheet from '../StyleSheet';
 import TextAncestorContext from './TextAncestorContext';
 import { useLocaleContext, getLocaleDirection } from '../../modules/useLocale';
 import { warnOnce } from '../../modules/warnOnce';
+import { useContext } from '../../modules/webContext';
 
 const forwardPropsList = Object.assign(
   {},
@@ -78,7 +79,7 @@ const Text: React.AbstractComponent<TextProps, HTMLElement & PlatformMethods> =
       );
     }
 
-    const hasTextAncestor = React.useContext(TextAncestorContext);
+    const hasTextAncestor = useContext(TextAncestorContext);
     const hostRef = React.useRef(null);
     const { direction: contextDirection } = useLocaleContext();
 

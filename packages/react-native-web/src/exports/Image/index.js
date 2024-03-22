@@ -20,6 +20,7 @@ import StyleSheet from '../StyleSheet';
 import TextAncestorContext from '../Text/TextAncestorContext';
 import View from '../View';
 import { warnOnce } from '../../modules/warnOnce';
+import { useContext } from '../../modules/webContext';
 
 export type { ImageProps };
 
@@ -210,7 +211,7 @@ const Image: React.AbstractComponent<
   });
 
   const [layout, updateLayout] = React.useState({});
-  const hasTextAncestor = React.useContext(TextAncestorContext);
+  const hasTextAncestor = useContext(TextAncestorContext);
   const hiddenImageRef = React.useRef(null);
   const filterRef = React.useRef(_filterId++);
   const requestRef = React.useRef(null);

@@ -11,6 +11,7 @@
 import * as React from 'react';
 import StyleSheet from '../StyleSheet';
 import View from '../View';
+import { createContext } from '../../modules/webContext';
 
 type Props = {
   WrapperComponent?: ?React.ComponentType<*>,
@@ -19,7 +20,7 @@ type Props = {
   rootTag: any
 };
 
-const RootTagContext: React.Context<any> = React.createContext(null);
+const RootTagContext: React.Context<any> = createContext(null);
 
 const AppContainer: React.AbstractComponent<Props> = React.forwardRef(
   (props: Props, forwardedRef?: React.Ref<any>) => {

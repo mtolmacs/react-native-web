@@ -9,7 +9,7 @@
 
 import type { Context } from 'react';
 
-import { createContext } from 'react';
+import { createContext } from '../../modules/webContext';
 
 const TextAncestorContext = createContext(false);
 export default (TextAncestorContext: Context<boolean>);
